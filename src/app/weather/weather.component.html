@@ -1,0 +1,19 @@
+
+<ng-container *ngIf="currentData">
+    <mat-card class="curret-weather-card">
+        <mat-card-header>
+            <mat-card-title>{{currentData?.name}}</mat-card-title>
+            <mat-card-subtitle>{{getPolishDay(currentData?.dt)}} {{getDay(currentData?.dt)}}</mat-card-subtitle>
+            <mat-card-subtitle>{{getHour(currentData?.dt)}}</mat-card-subtitle>
+            <img mat-card-sm-image [src]="'https://openweathermap.org/img/wn/'+ currentData?.weather[0]?.icon + '@2x.png'" >
+        </mat-card-header>
+        <mat-card-content>
+            <p>Temperatura odczuwalna: {{kelvinToCelsius(currentData?.main?.feels_like)}}C</p>
+            <p>Wilgotność: {{currentData?.main?.humidity}}%</p>
+            <p>Cisnienie: {{currentData?.main?.pressure}}hPa</p>
+            <p>Wschód słońca: {{getFormattedTime(currentData?.sys?.sunrise)}}</p>
+            <p>Zachód słońca: {{getFormattedTime(currentData?.sys?.sunset)}}</p>
+            <p><button class="btn btn-primary" mat-button color="primary" (click)="onRefresh()">Odśwież</button></p>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

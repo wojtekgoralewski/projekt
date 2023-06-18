@@ -1,0 +1,19 @@
+
+<ng-container *ngIf="pollutionData">
+    <mat-card class="pollution-weather-card" [style.background-color]="color">
+        <mat-card-header>
+            <mat-card-title>Zanieczyszczenie powietrza</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>CO: {{pollutionData?.list[0].components?.co}}</p>
+            <p>NO: {{pollutionData?.list[0].components?.no}}</p>
+            <p>NO2: {{pollutionData?.list[0].components?.no2}}</p>
+            <p>O3: {{pollutionData?.list[0].components?.o3}}</p>
+            <p>SO2: {{pollutionData?.list[0].components?.so2}}</p>
+            <p>PM2_5: {{pollutionData?.list[0].components?.pm2_5}}</p>
+            <p>PM10: {{pollutionData?.list[0].components?.pm10}}</p>
+            <p>NH3: {{pollutionData?.list[0].components?.nh3}}</p>
+            <div id="ocena-powietrza">{{checkAirEvaluation(pollutionData?.list[0].main?.aqi)}}</div>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

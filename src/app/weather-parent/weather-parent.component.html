@@ -1,0 +1,38 @@
+
+<div class="toolbar">
+    <form class="input-city-form" (ngSubmit)="checkCurretWeather()">
+        <mat-form-field class="current-weather-input">
+            <mat-label>Wpisz miasto</mat-label>
+            <input type="text" matInput placeholder="Np. Poznań" [(ngModel)]="city" name="city">
+        </mat-form-field>
+        <div class="button-container">
+            <button id="weather-button" mat-button color="primary" type="submit" (click)="showButtons()">Sprawdź pogodę</button>
+        </div>
+    </form>
+
+    <form class="pollution-city-form">
+        <div class="button-container" *ngIf="isShow">
+            <button id="pollution-button" mat-button color="primary" (click)="checkPollution()">Wyswietl
+                zanieczyszczenie</button>
+        </div>
+    </form>
+
+    <form class="future-weather-form">
+        <div class="button-container" *ngIf="isShow">
+            <button id="future-weather-button" mat-button color="primary" (click)="checkFutureWeather(); showTitle()">Wyświetl kolejne 4 dni</button>
+        </div>
+    </form>
+</div>
+
+<div class="component-position">
+    <div class="component-container">
+        <app-weather [currentData]="currentData" (refreshEvent)="onRefresh()"></app-weather>
+        <h1 class="futureWeatherTitle" *ngIf="isClicked">Prognoza pogody dla następnych 4 dni</h1>
+    </div>
+    <div class="component-container">
+        <app-pollution [pollutionData]="pollutionData"></app-pollution>
+    </div>
+</div>
+
+<mat-divider></mat-divider>
+<app-future-weather [futureData]="futureData" [groupedObjects]="groupedObjects"></app-future-weather>

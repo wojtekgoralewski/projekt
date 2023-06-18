@@ -1,0 +1,75 @@
+
+<ng-container class="wrap" *ngIf="groupedObjects">
+    <mat-card class="future-weather-card">
+        <mat-card-header>
+            <mat-card-title>{{getPolishDay(groupedObjects[1]?.[0]?.dt)}} {{getDay(groupedObjects[1]?.[0]?.dt)}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="horizontal-container">
+                <ng-container *ngFor="let item of groupedObjects[1]">
+                    <div class = item-container>
+                        <p><img mat-card-sm-image [src]="'https://openweathermap.org/img/wn/'+ item?.weather[0]?.icon + '@2x.png'" ></p>
+                        <div class="centered-text">
+                            <p>{{kelvinToCelsius(item?.main?.feels_like)}}C</p>
+                            <p>{{getHour(item?.dt)}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="future-weather-card">
+        <mat-card-header>
+            <mat-card-title>{{getPolishDay(groupedObjects[2]?.[0]?.dt)}} {{getDay(groupedObjects[2]?.[0]?.dt)}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="horizontal-container">
+                <ng-container *ngFor="let item of groupedObjects[2]">
+                    <div class = item-container>
+                        <p><img mat-card-sm-image [src]="'https://openweathermap.org/img/wn/'+ item?.weather[0]?.icon + '@2x.png'" ></p>
+                        <div class="centered-text">
+                            <p>{{kelvinToCelsius(item?.main?.feels_like)}}C</p>
+                            <p>{{getHour(item?.dt)}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="future-weather-card">
+        <mat-card-header>
+            <mat-card-title>{{getPolishDay(groupedObjects[3]?.[0]?.dt)}} {{getDay(groupedObjects[3]?.[0]?.dt)}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="horizontal-container">
+                <ng-container *ngFor="let item of groupedObjects[3]">
+                    <div class = item-container>
+                        <p><img mat-card-sm-image [src]="'https://openweathermap.org/img/wn/'+ item?.weather[0]?.icon + '@2x.png'" ></p>
+                        <div class="centered-text">
+                            <p>{{kelvinToCelsius(item?.main?.feels_like)}}C</p>
+                            <p>{{getHour(item?.dt)}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="future-weather-card">
+        <mat-card-header>
+            <mat-card-title>{{getPolishDay(groupedObjects[4]?.[0]?.dt)}} {{getDay(groupedObjects[4]?.[0]?.dt)}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="horizontal-container">
+                <ng-container *ngFor="let item of groupedObjects[4]">
+                    <div class = item-container>
+                        <p><img mat-card-sm-image [src]="'https://openweathermap.org/img/wn/'+ item?.weather[0]?.icon + '@2x.png'" ></p>
+                        <div class="centered-text">
+                            <p>{{kelvinToCelsius(item?.main?.feels_like)}}C</p>
+                            <p>{{getHour(item?.dt)}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

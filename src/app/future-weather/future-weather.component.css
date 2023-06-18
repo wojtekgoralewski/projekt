@@ -1,0 +1,15 @@
+
+
+.item-container p {
+    margin-right: 5px;
+}
+
+.horizontal-container{
+    display:flex;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.centered-text {
+    text-align:center;
+}

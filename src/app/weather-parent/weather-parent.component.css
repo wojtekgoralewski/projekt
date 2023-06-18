@@ -1,0 +1,27 @@
+.component-position{
+    display:flex;
+}
+
+.component-container{
+    flex: 1;
+}
+
+.futureWeatherTitle{
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.toolbar{
+    display:flex;
+    align-items: center;
+}
+
+.input-city-form,
+.pollution-city-form{
+    display: flex;
+    align-items: center;
+}
+
+.button-container button {
+    width: 100%;
+}
